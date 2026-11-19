@@ -1,0 +1,11 @@
+/* Painel original, só ajustes de legibilidade e interação. */
+body{background:#f7f3ee}
+.top{padding-bottom:14px;border-bottom:1px solid #e9dfd8}
+.brand{letter-spacing:.4px}
+.panel{box-shadow:0 8px 24px rgba(48,15,24,.045)}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible,.tabbar button:focus-visible{outline:3px solid #bd9b6f;outline-offset:3px}
+.tabbar{flex-wrap:wrap}.tabbar button{transition:background .2s,border-color .2s}
+.stat strong{font-family:Georgia,serif}
+.product-line{align-items:center}
+@media(max-width:580px){.product-line{flex-wrap:wrap}.product-line>span:last-child{margin-left:auto}.stats{gap:8px}.stat{padding:17px}.stat strong{font-size:23px}}

@@ -1,0 +1,88 @@
+/* VINARELLO | Aperfeiçoamentos discretos sobre o visual ORIGINAL.
+   A barra lateral, banner, cores, fontes e seções permanecem os mesmos. */
+:root { --focus-vinarello: #ad8754; }
+html { scroll-padding-top: 26px; }
+body { -webkit-font-smoothing: antialiased; }
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+button { font-family: inherit; }
+:where(a,button,input,select,textarea):focus-visible {
+  outline: 3px solid #d2ac6d !important; outline-offset: 3px;
+}
+::selection { background:#bd9b6f; color:#35121d; }
+/* Sidebar fiel ao original, com indicação de seção atual. */
+.sidebar a { justify-content:space-between; gap:10px; }
+.sidebar a.is-current { color:#f5d5a2; background:rgba(213,177,116,.12); border-color:rgba(213,177,116,.22); }
+.sidebar a.is-current:before { content:"";display:block;flex:0 0 3px;height:18px;background:#d4b06a;border-radius:3px;margin-right:-4px; }
+.side-count { display:inline-grid; place-items:center; width:23px;height:23px; min-width:23px;border-radius:50%;background:#d4b06a;color:#3f1420;font-size:11px;font-weight:800; }
+.side-count[hidden] { display:none!important; }
+.sidebar-backdrop { display:none; }
+.sidebar-backdrop[hidden] { display:none!important; }
+/* Subtle improvements — no new layout or page sections. */
+.hero-content { text-shadow: 0 1px 7px rgba(21,7,10,.09); }
+.hero .btn { box-shadow:0 8px 22px rgba(30,10,12,.11); }
+.hero .btn:hover { box-shadow:0 13px 25px rgba(30,10,12,.18); }
+.section-title h2 { text-wrap:balance; }
+.section-title p { margin-inline:auto; }
+#vinhos .catalog-tools { display:flex; align-items:center; gap:12px; padding:15px 18px; margin:0 0 25px;
+  background:#fffefa; border:1px solid #e7ded3; border-radius:10px; box-shadow:0 4px 13px rgba(53,15,25,.035); }
+#vinhos .catalog-search { flex:1 1 250px; display:flex; gap:9px; align-items:center; height:45px; background:white;
+  border:1px solid #e5dbd2; border-radius:8px; padding:0 12px; min-width:180px; }
+#vinhos .catalog-search:focus-within { border-color:#b9955d;box-shadow:0 0 0 3px rgba(185,149,93,.14); }
+#vinhos .catalog-search span {font-size:25px;line-height:1; color:#997a53; }
+#vinhos .catalog-search input {font:13px Arial,sans-serif; border:0; background:transparent; color:#4c2530;outline:0!important;
+  width:100%;height:100%;padding:0;box-shadow:none; }
+#vinhos .catalog-search input:focus-visible {outline:0!important;}
+#vinhos .catalog-sort { display:flex;align-items:center;gap:8px;color:#645a55;font-size:12px;white-space:nowrap; }
+#vinhos .catalog-sort select {font-size:12px;height:45px;max-width:165px;border-radius:8px;border:1px solid #e5dbd2;padding:0 10px;}
+#vinhos .catalog-count {font-size:11px; margin-left:0; min-width:115px; text-align:right;color:#7d726b; }
+#vinhos .product { border:1px solid #eae0d8; box-shadow:0 7px 22px rgba(53,14,25,.065); }
+#vinhos .product:hover { border-color:#d4bea0;box-shadow:0 16px 30px rgba(53,14,25,.11); }
+#vinhos .product img { border-bottom:1px solid #f2ebe4; }
+#vinhos .product:focus-within { box-shadow:0 0 0 2px #d7bf98; }
+#vinhos .product .btn { transition:background .18s,transform .18s,box-shadow .18s; }
+#vinhos .product .btn:active { transform:translateY(1px); }
+#vinhos .product .btn:disabled {opacity:.6;cursor:not-allowed;}
+#vinhos .product[hidden],.catalog-empty[hidden]{display:none!important;}
+.catalog-empty {margin:20px 0;padding:35px;text-align:center;border:1px dashed #d7c4ae;background:#fffefa;border-radius:12px;}
+.catalog-empty strong{display:block;font:500 24px Georgia,serif;color:#5b1725;}
+.catalog-empty p{color:#766a63;margin:10px 0 20px;font-size:14px;}
+.catalog-empty .btn{font-size:11px;}
+/* Cart/account polish within original layout. */
+.cart-item .quantity-btn { width:32px;height:32px; }
+.quantity-btn:hover { filter:brightness(1.13); }
+.delivery-field input:hover,.customer-form input:hover { border-color:#cbbba9; }
+.cart-total {gap:12px;}
+.payment-option {cursor:pointer;}
+.order-result:empty {display:none!important;}
+.customer-modal-content { max-height: min(92vh,780px); overflow-y:auto; }
+/* Small temporary feedback; does not interfere with original cart page. */
+.vinarello-toast {position:fixed;z-index:2000;bottom:25px;right:28px;max-width:min(380px,calc(100vw - 32px));
+ display:flex;align-items:center;gap:16px;padding:14px 17px;border-radius:10px;border:1px solid #d9c19c;
+ background:#4d1724;color:#fffaf2;box-shadow:0 16px 40px rgba(39,12,20,.24);font-size:12px;line-height:1.4;
+ transform:translateY(15px);opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;}
+.vinarello-toast.show {transform:translateY(0);opacity:1;pointer-events:auto;}
+.vinarello-toast a {color:#f0d39e;text-decoration:underline;white-space:nowrap;font-weight:700;}
+/* Important original issue: old style uses display:none!important for .menu-btn; fix with !important. */
+@media(max-width:800px) {
+ .menu-btn{display:block!important;z-index:1502;left:14px;top:13px;border-radius:8px!important;}
+ .sidebar{z-index:1501;transition:left .28s ease!important;}
+ .sidebar-backdrop:not([hidden]){display:block;position:fixed;inset:0;z-index:1500;background:rgba(25,9,12,.55);border:0;}
+ body.menu-open{overflow:hidden;}
+ .hero{padding-top:100px!important;}
+ .hero-content{padding-top:18px;}
+ #vinhos .catalog-tools{flex-wrap:wrap;padding:12px;gap:10px;}
+ #vinhos .catalog-search{flex:1 1 100%;}
+ #vinhos .catalog-sort{flex:1;}
+ #vinhos .catalog-count{width:auto;text-align:left;min-width:0;}
+ .vinarello-toast{bottom:14px;right:14px;}
+}
+@media(max-width:600px){
+ section{padding-left:20px!important;padding-right:20px!important;}
+ #vinhos .products{grid-template-columns:1fr;gap:19px;}
+ #vinhos .product img{height:270px;min-height:270px;}
+ #vinhos .product-info{padding:21px;}
+ #vinhos .catalog-count{flex:1 1 100%;}
+ .account-shell{min-width:0;}
+ .card-number-preview{font-size:clamp(14px,4vw,20px)!important;}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;}}

@@ -1,0 +1,31 @@
+VINARELLO — ORIGINAL APRIMORADO | 2026
+=====================================
+ESTA VERSAO USA O PRIMEIRO VINARELLO COMO BASE.
+Mantidos: barra lateral, foto de fundo do banner, nome/textos da marca, 12 produtos,
+enderecos originais das fotos dos vinhos, secao Sobre, Producao, Carrinho, Conta,
+Contato, cores bordo/creme/dourado, checkout academico e painel admin.
+
+MELHORIAS PONTUAIS
+- Botao de menu mobile agora aparece e abre/fecha a lateral corretamente.
+- Busca/ordenacao funcionam e aparecem no catalogo; botao para zerar filtro.
+- Carrinho com indicador na lateral; feedback discreto ao adicionar itens.
+- Melhor foco de teclado, alinhamentos, espacos e estados de hover.
+- Fallback ilustrativo se as fotos externas nao carregarem. As URLs originais permanecem.
+- Supabase anterior retirado da configuracao para usar uma conta NOVA.
+
+COMO USAR
+1. Abra a pasta site e execute nela um servidor local (e.g. npx.cmd http-server -p 3000).
+2. Abra http://localhost:3000 no navegador. A vitrine funciona mesmo sem Supabase.
+3. No Supabase da NOVA conta: abra SQL Editor e execute supabase/01_BANCO_COMPLETO.sql.
+4. Em site/supabase-config.js coloque apenas a URL e a CHAVE PUBLICA (publishable/anon).
+5. Para testar cadastro/pedidos, ative as configuracoes de Auth desejadas e crie uma conta.
+6. Para acessar admin.html, execute supabase/02_TORNAR_ADMIN.sql com o e-mail da conta criada.
+7. Use supabase/03_TESTAR_BANCO.sql para conferir as tabelas/produtos.
+
+ATENCAO
+- Site academico e pagamento SOMENTE SIMULADO. Nao existe cobranca real.
+- NUNCA adicione a chave secreta/service_role ao arquivo visivel no navegador.
+- Nao coloque dados reais de cartao nos campos ilustrativos do checkout.
+- Algumas fotos de produtos dependem do site externo Salton, como no original.
+- Sem configurar a nova conta Supabase, cadastro/checkout/admin ficam indisponiveis.
+- Para testar via computador, abra via HTTP local em vez de abrir HTML por duplo clique.

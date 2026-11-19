@@ -1,0 +1,39 @@
+VINARELLO | MINHA CONTA CORRIGIDA
+==================================
+
+Esta é a versão ORIGINAL APRIMORADA do Vinarello. Não é uma reformulação visual.
+
+O QUE FOI CORRIGIDO
+- Cliente deslogado: seção Minha conta mostra os botões de criar conta e entrar.
+- Cliente logado: seção Minha conta mostra nome, e-mail, quantidade de pedidos,
+  Meus dados, Meus pedidos, Continuar comprando e Sair da conta.
+- Perfil: atualização de nome, telefone e endereço diretamente na tabela vinarello_clientes.
+- Pedidos: listagem limitada aos registros do cliente autenticado, conforme o RLS.
+- A tela acompanha login, logout e sessão restaurada após atualizar a página.
+- Menu Meus pedidos direciona à área da conta, e solicita login se necessário.
+- Layout, cores, fotos e demais seções originais foram preservados.
+
+COMO PUBLICAR SEM TROCAR O LINK
+1. Acesse https://app.netlify.com e selecione seu site atual vinarellovinhos.
+2. Em Deploys, use a opção de fazer deploy manual e envie o conteúdo deste ZIP
+   (ou arraste a pasta descompactada com index.html na raiz).
+3. NÃO crie outro site. O endereço antigo continuará o mesmo.
+4. Atualize https://vinarellovinhos.netlify.app com Ctrl+Shift+R.
+5. Entre numa conta confirmada, abra Minha conta, teste Meus dados e Sair.
+
+SUPABASE
+- O arquivo supabase-config.js já contém a URL e a chave PÚBLICA que você forneceu.
+- Não inclui e nem deve incluir chave service_role/secret ou dados SMTP do Brevo.
+- Usa as tabelas vinarello_clientes e vinarello_pedidos já existentes.
+- Não precisa rodar SQL novamente para esta atualização visual/funcional.
+- O histórico e a edição do perfil dependem das políticas RLS existentes.
+- O SMTP Brevo é configurado apenas no painel Supabase, não neste ZIP.
+
+TESTES
+Validação em navegador local com simulador de Supabase: troca de estados
+visitante/logado, login, edição de perfil, pedidos, logout e layout mobile.
+O banco real não foi acessado nem alterado nos testes.
+
+AVISO
+Checkout é demonstrativo, sem cobrança real. Venda de bebida alcoólica
+somente a pessoas de 18 anos ou mais.
